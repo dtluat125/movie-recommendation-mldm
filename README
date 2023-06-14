@@ -1,0 +1,21 @@
+# Movie Recommendation System
+
+This repository contains a movie recommendation system implemented using user-based and item-based collaborative filtering techniques.
+
+## Overview
+
+The movie recommendation system aims to provide personalized movie recommendations to users based on their past ratings and similarities with other users or items. It utilizes two popular collaborative filtering approaches: user-based collaborative filtering and item-based collaborative filtering.
+
+The system uses the Movielens dataset (specifically the Movielens 100k dataset) as the source of movie ratings. It employs machine learning algorithms, specifically Nearest Neighbors, to find similar users or items and make recommendations based on their ratings.
+
+## Repository Structure
+
+The repository is organized into two separate folders:
+
+1. Item-based Collaborative Filtering: This folder contains the implementation of the item-based collaborative filtering approach. It includes the necessary code to build the item-item similarity matrix, calculate ratings, and make movie recommendations.
+
+2. User-based Collaborative Filtering: This folder contains the implementation of the user-based collaborative filtering approach. It includes the code to find similar users, calculate ratings, and generate personalized movie recommendations.
+
+## Usage
+
+To use the movie recommendation system, follow the instructions provided in the respective folders for item-based and user-based collaborative filtering. Each folder contains detailed explanations and instructions on how to run the code and generate movie recommendations.
