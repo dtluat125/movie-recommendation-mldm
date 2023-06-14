@@ -1,0 +1,52 @@
+MOVIE RECOMMENDATION SYSTEM (ITEM-BASED COLABORATIVE FILTERING)
+
+SUMMARY
+==================================================================================================================
+
+ 
+- These 3 folders contain the ipynb notebook, the dataset and the output of the movie recommender.
+
+- There are 2 parts to this approach: The recommender and The performance metrics
+	+ The recommender recommends to any user in the dataset.
+	+ The metrics part is to calculate Root Mean Squared Error(RMSE) and Mean Absolute Percentage Error(MAPE) of the system (which take almost 2 hours to train the model and get rating predictions for both training and test set). 
+
+- The dataset, "ml-latest-small", we used was downloaded from GroupLens(MovieLens) website, consists of 100836 ratings across 9742 movies.These data were created by 610 users between March 29, 1996 and September 24, 2018.
+The full dataset contained files links.csv, movies.csv, ratings.csv and tags.csv, however, for this project we only uilized the ratings.csv and movies.csv files.
+
+DATASET
+==================================================================================================================
+
+-The movies.csv file contains the movieId,title and genre column saved in the format:
+Example: 
+"1,Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy"
+
+	+ movieId is an integer that maps to the movieId column in the rating.csv file.
+	+ The title of each movie is followed by the year that movie was released.
+	+ The genre column of each movie consist of a list of genre that movie is considered to fall under.
+
+-The ratings.csv file contains the userId,movieId,rating,timestamp saved in the format:
+Example:
+"1,3,4.0,964981247"
+
+	+ userId indicates the user who rated the movie that has the id shown in the movieId column
+	+ rating is a float number in the scale of 0-5 indicating how good the user thought the movie was.
+	+ timestamp is the number of seconds to when the movie was rated by that user
+
+
+
+PYTHON NOTEBOOK
+==================================================================================================================
+
+- The "Item-Based-CF.ipynb" file is the the full process of the recommender system, it consists of the process of importing the dataset, creating interaction user-item matrices, creating the KNN model and training it on the training set,predicting the ratings each user-item pair in the dataset for later comparison and recommending a list of movies for a userId. To run this file, please run it with the dataset files ratings.csv and movies.csv in the same folder as the notebook (Please Note that the full process of this recommender system is about 2 hours long, to see the notebook attached with the full output, see the Google Colab notebook: https://colab.research.google.com/drive/1UCeF1HD3WcC0P_ll_WzpSwT4NQRuAXvW )
+
+- The "Movie_Recommender(Item-based).ipynb" file is simply training the KNN model, recommending and predicting ratings for the recommendations, to run this file, run it along with the movies.csv and ratings.csv files in the same folder, type in the userId of the user you want to make recommendations to and the recommender will recommend based on their past ratings.
+
+- The "Performance-Metric(Item-based).ipynb" contains the evaluation metric we used for the whole model on both the training and test set. We have extracted the training set, test set and their predictions out to 4 csv files("test_rating.csv","train_rating.csv","train_final_data.csv","test_final_data.csv") in the 'output' folder (Please note that this is only 1 case of splitting the dataset).To run this notebook and see the performance of KNN predictions, please run this notebook with the 4 files in the 'output' folder.
+
+
+OUTPUT
+==================================================================================================================
+
+- The output folder contains the csv files for the predicted rating on the training set and test set of the recommendation system.
+	+ train_final_data.csv contains the rating predictions on the training set.
+	+ test_final_data.csv contains the rating predictions on the test set.
