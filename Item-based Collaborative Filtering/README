@@ -50,3 +50,5 @@ OUTPUT
 - The output folder contains the csv files for the predicted rating on the training set and test set of the recommendation system.
 	+ train_final_data.csv contains the rating predictions on the training set.
 	+ test_final_data.csv contains the rating predictions on the test set.
+	+ train_data.csv contains the training set as a result of splitting the dataset
+	+ test_data.csv contains the test set as a result of splitting the dataset
